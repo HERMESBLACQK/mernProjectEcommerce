@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import WebFont from "webfontloader";
 import React from "react";
 import Footer from "./component/layout/Footer/Footer";
-import Home from "./component/Home/Home";
+import Home from "./component/Home/Home"; // Import the Home component
 import ProductDetails from "./component/Product/ProductDetails";
 import Products from "./component/Product/Products";
 import Search from "./component/Product/Search";
@@ -41,7 +41,7 @@ import UpdateUser from "./component/Admin/UpdateUser";
 import ProductReviews from "./component/Admin/ProductReviews";
 import Contact from "./component/layout/Contact/Contact";
 import About from "./component/layout/About/About";
-import NotFound from "./component/layout/Not Found/NotFound";
+import NotFound from "./component/layout/NotFound/NotFound";
 
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -80,8 +80,11 @@ function App() {
         </Elements>
       )}
 
-        <Route exact path="/" component={Home} />
       <Switch>
+        {/* Set Home component as root component */}
+        <Route exact path="/" component={Home} />
+
+        {/* Other routes remain unchanged */}
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
         <Route path="/products/:keyword" component={Products} />
