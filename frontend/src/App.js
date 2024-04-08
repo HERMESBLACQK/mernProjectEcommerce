@@ -80,8 +80,8 @@ function App() {
         </Elements>
       )}
 
-      <Switch>
         <Route exact path="/" component={Home} />
+      <Switch>
         <Route exact path="/product/:id" component={ProductDetails} />
         <Route exact path="/products" component={Products} />
         <Route path="/products/:keyword" component={Products} />
